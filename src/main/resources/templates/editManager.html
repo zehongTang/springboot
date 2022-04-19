@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑用户页面</title>
+</head>
+<body>
+<form action="exchange" method="post">
+<table>
+    <tr>
+        <td>编号：</td>
+        <td>
+            <input type="text" name="id" readonly th:value="${manager.id}">
+        </td>
+    </tr>
+    <tr>
+        <td>用户名：</td>
+        <td>
+            <input type="text" name="username" th:value="${manager.username}">
+        </td>
+    </tr>
+    <tr>
+        <td>密码：</td>
+        <td>
+            <input type="text" name="password" th:value="${manager.password}">
+        </td>
+    </tr>
+</table>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="保存">
+        </td>
+    </tr>
+</form>
+</body>
+</html>

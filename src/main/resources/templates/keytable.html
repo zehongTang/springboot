@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>主键编号</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>邮箱</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="keytable:${keytableList}">
+        <td th:text="${keytable.id}">111</td>
+        <td th:text="${keytable.name}">111</td>
+        <td th:text="${keytable.password}">111</td>
+        <td th:text="${keytable.sex}">111</td>
+        <td th:text="${keytable.age}">111</td>
+        <td th:text="${keytable.email}">111</td>
+        <td>
+            <a th:href="@{editKeytable(id=${keytable.id})}">编辑</a>
+            <a th:href="@{del(id=${keytable.id})}">删除</a>
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="7">
+            <a href="keytableadd">新增</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

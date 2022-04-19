@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>主键编号</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="manager:${managerList}">
+        <td th:text="${manager.id}">111</td>
+        <td th:text="${manager.username}">111</td>
+        <td th:text="${manager.password}">111</td>
+        <td>
+            <a th:href="@{/editManager(id=${manager.id})}">编辑</a>
+            <a th:href="@{del(id=${manager.id})}">删除</a>
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="4">
+            <a href="add">新增</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
